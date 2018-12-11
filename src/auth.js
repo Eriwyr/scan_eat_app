@@ -6,8 +6,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet,View} from 'react-native';
+import {Platform, StyleSheet,View,StatusBar,SafeAreaView} from 'react-native';
 import {Button,FormInput} from 'react-native-elements';
+import colors from '../theme.js';
 import Navigation from './Navigation';
 
 const instructions = Platform.select({
@@ -32,26 +33,32 @@ export default class Auth extends Component{
 
     
     checkAuth(e) {
-     if (this.state.login == "Admin" && this.state.password == "Admin") {
-       console.log("ok")
-       this.props.navigation.navigate("Test")
-       console.log("after")
-     }
-     else{
-       console.log('no')
-     }
+      this.props.navigation.navigate("recipiesList")
+    //  if (this.state.login == "Admin" && this.state.password == "Admin") {
+    //    console.log("ok")
+    //    this.props.navigation.navigate("Test")
+    //    console.log("after")
+    //  }
+    //  else{
+    //    console.log('no')
+    //  }
     }
     
   render() {
     return (
-      <View>
-        <FormInput placeholder="Identifiant" name='login' onChangeText={(login)=> this.setState({login})}></FormInput> 
-        <FormInput placeholder="Mot de passe" name='password' onChangeText={(password) => this.setState({password})}></FormInput>
-        <Button large raised icon={{name: 'sign-in', type: 'font-awesome'}} title="Connexion" style={styles.button} onPress={this.checkAuth}>
+      <SafeAreaView style={{flex:1, justifyContent: 'center'}} backgroundColor={colors.backgroundColor}>
+        
+        <View style={styles.form}>
+          <FormInput containerStyle={styles.containerForm} inputStyle={styles.inputStyle} shake placeholder="Identifiant"  placeholderTextColor={colors.placeholderColor} name='login' onChangeText={(login)=> this.setState({login})}></FormInput> 
+          <FormInput containerStyle={styles.containerForm} inputStyle={styles.inputStyle} shake placeholder="Mot de passe" placeholderTextColor={colors.placeholderColor} name='password' onChangeText={(password) => this.setState({password})}></FormInput>
+        </View>
+        
+        <Button  buttonStyle={{backgroundColor: colors.buttonColor }} large raised icon={{name: 'sign-in', type: 'font-awesome'}} title="Connexion" style={styles.button} onPress={this.checkAuth}>
         </Button>
-      </View>
+      </SafeAreaView>
     );
   }
+  
 
   componentDidMount() {
   }
@@ -60,25 +67,21 @@ export default class Auth extends Component{
 const styles = StyleSheet.create({
 
 
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  containerForm: {
+    borderBottomWidth:2,
+    marginBottom:50,
+    borderBottomColor:colors.secondaryColor,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  inputStyle: {
+      fontSize:30,
+      marginBottom:20
   },
-  header: {
-      textAlign:"center",
-
-  },
-  logContainer: {
+  form: {
     margin:10,
+    marginBottom:30,
   },
   
   button:{
-      marginTop:10,
+
   }
 });

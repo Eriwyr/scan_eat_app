@@ -4772,6 +4772,11 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-color-theme@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-color-theme/-/react-native-color-theme-0.0.1.tgz#e581e1d52166d77728b485aaefa54adfe02c0ab1"
+  integrity sha512-FjWlo4ZydP19BQqj0FMAXejhZqJE0BvcSp0ZkyD8cs5r/B4l/U/CGAy+8uVz/OvwoO+x9pUZV+A7ah+v0+WV9w==
+
 react-native-elements@^0.19.1:
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-0.19.1.tgz#f92b69d864a150215d01f81fe3c52a9cada83e45"
