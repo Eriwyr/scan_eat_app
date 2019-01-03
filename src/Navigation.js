@@ -3,11 +3,12 @@ import {Button} from 'react-native-elements';
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import Auth from './auth';
 import recipiesList from './recipiesList';
+import RecipieDescription from './recipieDescription';
 import colors from '../theme.js';
 
 
 const AuthStackNavigator = createStackNavigator({
-  Auth: { // Ici j'ai appelé la vue "Search" mais on peut mettre ce que l'on veut. C'est le nom qu'on utilisera pour appeler cette vue
+  Auth: {
     screen: Auth,
     navigationOptions: {
       title: 'Scan Eat',
@@ -19,7 +20,7 @@ const AuthStackNavigator = createStackNavigator({
     }
   },
 
-  recipiesList: { // Ici j'ai appelé la vue "Search" mais on peut mettre ce que l'on veut. C'est le nom qu'on utilisera pour appeler cette vue
+  recipiesList: { // 
     screen: recipiesList,
     navigationOptions: {
       title: 'Recettes',
@@ -36,6 +37,18 @@ const AuthStackNavigator = createStackNavigator({
         />
       ),
       
+    }
+  },
+
+  RecipieDescription: {
+    screen: RecipieDescription,
+    navigationOptions: {
+      title: 'Description',
+      headerStyle: {
+        backgroundColor: colors.backgroundColor,
+        height: 56,
+        elevation: null
+      }
     }
   }
 })

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {Platform,SafeAreaView,FlatList,StyleSheet,StatusBar,Text} from 'react-native';
-import { List, ListItem,Avatar,Button} from 'react-native-elements'
+import {List, ListItem,Avatar,Button} from 'react-native-elements'
 import colors from '../theme.js';
-import recipie from './recipiesData'
+import recipie from './recipiesData';
+import RecipiesListElement from './recipiesListElement.js';
 
 
 const instructions = Platform.select({
@@ -11,47 +12,6 @@ const instructions = Platform.select({
     'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
-
-// const list = [
-//   {
-//     name: 'Amy Farha',
-//     subtitle: 'Vice President'
-//   },
-//   {
-//     name: 'Chris Jackson',
-//     avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-//     subtitle: 'Vice Chairman'
-//   },
-// ]
-// export default class recipiesList extends Component {
-
-
-// renderRow ({ item }) {
-//   return (
-//     <ListItem
-//       avatar={<Avatar
-//                 rounded
-//                 source={item.avatar_url && {uri: item.avatar_url}}
-//                 title={item.name[0]}
-//               />}
-//       title={item.name}
-//       subtitle={item.subtitle}
-//     />
-//   )
-// }
-
-// render () {
-//   return (
-//     <List>
-//       <FlatList
-//         data={list}
-//         renderItem={this.renderRow}
-//         keyExtractor={item => item.name}
-//       />
-//     </List>
-//   )
-// }
-// }
 
 export default class recipiesList extends Component {
   
@@ -73,7 +33,7 @@ export default class recipiesList extends Component {
         <List containerStyle={styles.listStyle}>
           <FlatList
             data={recipie}
-            renderItem={this.renderRow}
+            renderItem={({item}) => <RecipiesListElement recipie={item}/>}
             keyExtractor={(item) => item.name}
           />
         </List>

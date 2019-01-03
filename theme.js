@@ -2,12 +2,12 @@ import ThemeManager from 'react-native-color-theme';
  
 const colors = new ThemeManager({
  blueTheme: {
-     mainColor: '#9BE564',
-     secondaryColor: '#EF8354',
+     mainColor: '#F24333',
+     secondaryColor: '#2D3047',
      statusBarStyle: 'light-content',
-     backgroundColor: '#9BE564',
+     backgroundColor: '#F24333',
      placeholderColor:"white",
-     buttonColor:'#EF8354'
+     buttonColor:'#2D3047'
  },
  redTheme: {
      mainColor: 'red',

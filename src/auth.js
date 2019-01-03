@@ -6,10 +6,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet,View,StatusBar,SafeAreaView} from 'react-native';
+import {Platform, StyleSheet,View,SafeAreaView} from 'react-native';
 import {Button,FormInput} from 'react-native-elements';
 import colors from '../theme.js';
-import Navigation from './Navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
