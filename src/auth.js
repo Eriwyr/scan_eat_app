@@ -6,9 +6,10 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet,View,SafeAreaView} from 'react-native';
+import {Platform, StyleSheet,View,SafeAreaView,ImageBackground,ScrollView} from 'react-native';
 import {Button,FormInput} from 'react-native-elements';
 import colors from '../theme.js';
+import { red } from 'ansi-colors';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -45,16 +46,28 @@ export default class Auth extends Component{
     
   render() {
     return (
-      <SafeAreaView style={{flex:1, justifyContent: 'center'}} backgroundColor={colors.backgroundColor}>
-        
-        <View style={styles.form}>
-          <FormInput containerStyle={styles.containerForm} inputStyle={styles.inputStyle} shake placeholder="Identifiant"  placeholderTextColor={colors.placeholderColor} name='login' onChangeText={(login)=> this.setState({login})}></FormInput> 
-          <FormInput containerStyle={styles.containerForm} inputStyle={styles.inputStyle} shake placeholder="Mot de passe" placeholderTextColor={colors.placeholderColor} name='password' onChangeText={(password) => this.setState({password})}></FormInput>
-        </View>
-        
-        <Button  buttonStyle={{backgroundColor: colors.buttonColor }} large raised icon={{name: 'sign-in', type: 'font-awesome'}} title="Connexion" style={styles.button} onPress={this.checkAuth}>
-        </Button>
-      </SafeAreaView>
+      <View style={{flex:1, justifyContent: 'center'}} backgroundColor={colors.backgroundColor}>
+        <ImageBackground
+        style={{
+          backgroundColor: '#ccc',
+          flex: 1,
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          justifyContent: 'center',
+        }}
+        resizeMode= 'cover'
+        source={require('../data/authBackground.jpg')}
+        >
+          <View style={styles.form}>
+            <FormInput containerStyle={styles.containerForm} inputStyle={styles.inputStyle} shake placeholder="Identifiant"  placeholderTextColor={colors.placeholderColor} name='login' onChangeText={(login)=> this.setState({login})}></FormInput> 
+            <FormInput secureTextEntry={true} containerStyle={styles.containerForm} inputStyle={styles.inputStyle} shake placeholder="Mot de passe" placeholderTextColor={colors.placeholderColor} name='password' onChangeText={(password) => this.setState({password})}></FormInput>
+          </View>
+          
+          <Button  buttonStyle={{backgroundColor: colors.buttonColor }} large raised icon={{name: 'sign-in', type: 'font-awesome'}} title="Connexion" style={styles.button} onPress={this.checkAuth}>
+          </Button>
+        </ImageBackground>
+      </View>
     );
   }
   
@@ -72,7 +85,9 @@ const styles = StyleSheet.create({
     borderBottomColor:colors.secondaryColor,
   },
   inputStyle: {
+     color:'white',
       fontSize:30,
+      fontWeight:'bold',
       marginBottom:20
   },
   form: {

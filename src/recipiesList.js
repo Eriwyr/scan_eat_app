@@ -14,19 +14,21 @@ const instructions = Platform.select({
 });
 
 export default class recipiesList extends Component {
-  
-  renderRow ({ item }) {
-    return (
-      <ListItem containerStyle ={styles.itemStyle} rightIcon={{style: {color:colors.secondaryColor} }}
 
-        roundAvatar
-        title={item.name}
-        avatar={{uri:item.imageURL}}
-      />
-    )
+  constructor(props){
+    super(props);
+    this.navigateToCreateRecipie = this.navigateToCreateRecipie.bind(this);
   }
+  static navigationOptions= ({navigation}) => ({
+    title:"Recettes",
+    headerRight: <Button 
+                  icon={{name: 'plus-circle', type: 'font-awesome'}}
+                  onPress={() => navigation.navigate("CreateRecipie")}
+                  backgroundColor='transparent'
+    />   
+    });
   
-  render() {
+  render(){
     return (
         
       <SafeAreaView style={{flex:1}} backgroundColor={colors.backgroundColor}>
@@ -40,6 +42,12 @@ export default class recipiesList extends Component {
       </SafeAreaView>
     );
   }
+
+  navigateToCreateRecipie(){
+    console.log("ok");
+    this.props.navigation.navigate("Auth");
+  }
+
 }
 
 const styles = StyleSheet.create({
