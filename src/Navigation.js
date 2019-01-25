@@ -4,7 +4,6 @@ import recipiesList from './recipiesList';
 import RecipieDescription from './recipieDescription';
 import colors from '../theme.js';
 import CreateRecipie from './createRecipie';
-import addIngredientComponent from './addIngredientComponent';
 
 const AuthStackNavigator = createStackNavigator({
   Auth: {

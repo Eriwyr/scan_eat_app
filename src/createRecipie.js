@@ -33,7 +33,6 @@ class CreateRecipie extends Component {
         return (
             <View  style={styles.container}>
                 <AddIngredientComponent/>
-                
                 {/* <Camera
                     style={styles.preview}
                     onBarCodeRead={this.onBarCodeRead}

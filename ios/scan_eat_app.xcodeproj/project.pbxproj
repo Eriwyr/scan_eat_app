@@ -41,6 +41,7 @@
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		446D3D7F8D1D4F2F9E042900 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB6CDB680A9D4A8CBE1F9A3E /* Ionicons.ttf */; };
 		4D4BAC3F21EB86CB00E42F44 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4BABDF21EB7F4B00E42F44 /* libRCTCameraRoll.a */; };
+		4DC0632B21FB33C8005917C7 /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D4BABDF21EB7F4B00E42F44 /* libRCTCameraRoll.a */; };
 		5008DBA089B6451DAA669648 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA6A3EB2B9AA45329F20D171 /* SimpleLineIcons.ttf */; };
 		5712A05DFA2D40DFB8672C6A /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0D1D8EE6E904CEF804C066D /* FontAwesome5_Regular.ttf */; };
 		6198047650D344EFB0A33942 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 483828D2813A466C81F1F6C3 /* MaterialCommunityIcons.ttf */; };
@@ -437,6 +438,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC0632B21FB33C8005917C7 /* libRCTCameraRoll.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,

@@ -7,7 +7,7 @@ const colors = new ThemeManager({
      statusBarStyle: 'light-content',
      backgroundColor: '#F24333',
      placeholderColor:"white",
-     buttonColor:'#2D3047'
+     buttonColor:'#2D3047',
  },
  redTheme: {
      mainColor: 'red',
